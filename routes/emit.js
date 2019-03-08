@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
             res.json({ key: my_key, msg: my_msg});
         });
 
-        setTimeout(function() { conn.close(); process.exit(0) }, 500);
+        setTimeout(function() { conn.close(); }, 500);
     });
 
 
