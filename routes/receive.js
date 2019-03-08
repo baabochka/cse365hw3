@@ -33,7 +33,7 @@ router.post('/', function(req, res, next) {
 
                 ch.consume(q.queue, function(got_msg) {
                     // console.log(" [x] %s: '%s'", msg.fields.routingKey, msg.content.toString());
-                    res.json({msg: got_msg});
+                    res.json({msg: got_msg.content.toString()});
                     conn.close();
                 }, {noAck: true});
             });
